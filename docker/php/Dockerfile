@@ -46,7 +46,7 @@ RUN apt-get update \
   && apt-get -y install sudo \
   && useradd -m --uid ${DOCKER_UID} --groups sudo ${DOCKER_USER} \
   && echo ${DOCKER_USER}:${DOCKER_PASSWORD} | chpasswd \
-  && echo "${DOCKER_USER} ALL=NOPASSWD: ALL" | tee /etc/sudoers
+  && echo "${DOCKER_USER} ALL=NOPASSWD: ALL" | tee -a /etc/sudoers
 
 # 作成したユーザーに切り替える
 USER ${DOCKER_USER}
@@ -61,7 +61,7 @@ COPY ./docker/php/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 FROM base AS deploy
 
 COPY ./docker/php/php.deploy.ini /usr/local/etc/php/php.ini
-COPY ./src /data
+COPY ../src /data
 
 RUN composer install -q -n --no-ansi --no-dev --no-scripts --no-progress --prefer-dist \
   && chmod -R 777 storage bootstrap/cache \
