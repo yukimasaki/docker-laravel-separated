@@ -40,8 +40,8 @@ COPY ./docker/php/php.development.ini /usr/local/etc/php/php.ini
 
 # ユーザーを作成
 ARG DOCKER_UID=1000
-ARG DOCKER_USER=yuki
-ARG DOCKER_PASSWORD=yuki
+ARG DOCKER_USER=dev
+ARG DOCKER_PASSWORD=dev
 RUN apt-get update \
   && apt-get -y install sudo \
   && useradd -m --uid ${DOCKER_UID} --groups sudo ${DOCKER_USER} \
