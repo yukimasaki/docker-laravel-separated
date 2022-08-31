@@ -38,19 +38,6 @@ FROM base AS development
 
 COPY ./docker/php/php.development.ini /usr/local/etc/php/php.ini
 
-# パスワードなしでsudo可能なユーザーを作成
-ARG DOCKER_UID=1000
-ARG DOCKER_USER=dev
-ARG DOCKER_PASSWORD=dev
-RUN apt-get update \
-  && apt-get -y install sudo \
-  && useradd -m --uid ${DOCKER_UID} --groups sudo ${DOCKER_USER} \
-  && echo ${DOCKER_USER}:${DOCKER_PASSWORD} | chpasswd \
-  && echo "${DOCKER_USER} ALL=NOPASSWD: ALL" | tee -a /etc/sudoers
-
-# 作成したユーザーに切り替える
-USER ${DOCKER_USER}
-
 FROM development AS development-xdebug
 
 RUN pecl install xdebug && \
