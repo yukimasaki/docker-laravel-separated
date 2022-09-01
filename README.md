@@ -1,5 +1,5 @@
 # About
-This repository replicates [ucan-lab/docker-laravel](https://github.com/ucan-lab/docker-laravel/) as a template.  
+This repository is replicated using [ucan-lab/docker-laravel](https://github.com/ucan-lab/docker-laravel/) as a template.  
 Source code and Docker files can be managed as independent repositories.
 
 # Directory structures
@@ -44,6 +44,6 @@ docker-laravel
 1. Click [Use this template](https://github.com/yukimasaki/docker-laravel-separated/generate)
 2. $ mkdir -p docker-laravel/infra
 3. $ cd docker-laravel/infra
-4. $ git clone `https://github.com/your-repository/copy-template.git` .
+4. $ git clone `https://github.com/your-repository/replicated-template.git` .
 5. $ git clone `https://github.com/existing/project.git` ../src
 6. $ make init
