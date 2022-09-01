@@ -36,7 +36,7 @@ docker-laravel
 1. Click [Use this template](https://github.com/yukimasaki/docker-laravel-separated/generate)
 2. $ mkdir -p docker-laravel/infra
 3. $ cd docker-laravel/infra
-4. $ git clone `https://github.com/your/repository.git`
+4. $ git clone `https://github.com/your-repository/replicated-template.git` .
 5. $ make create-project # Install the latest Laravel project
 6. $ make install-recommend-packages # Optional
 
