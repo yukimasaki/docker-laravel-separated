@@ -17,7 +17,7 @@ docker-laravel
 ### app container
 - Base image
   - [php](https://hub.docker.com/_/php):7.4.1-fpm
-  - [composer](https://hub.docker.com/_/composer):2.0
+  - [composer](https://hub.docker.com/_/composer):2.4.1
 
 ### web container
 - Base image
