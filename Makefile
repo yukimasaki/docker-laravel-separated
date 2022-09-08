@@ -105,3 +105,5 @@ ide-helper:
 	docker-compose exec app php artisan ide-helper:generate
 	docker-compose exec app php artisan ide-helper:meta
 	docker-compose exec app php artisan ide-helper:models --nowrite
+dev:
+	docker-compose exec app npm run dev
